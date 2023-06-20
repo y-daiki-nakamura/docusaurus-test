@@ -47,7 +47,7 @@ jobs:
           yes "" | sudo ./install.sh
 
       - name: Build PDF
-        run: npx docusaurus-prince-pdf -u https://y-daiki-nakamura.github.io/docs/  --output docs.pdf
+        run: npx docusaurus-prince-pdf -u https://y-daiki-nakamura.github.io/docs --output docs.pdf
 
       - name: Upload results
         uses: actions/upload-artifact@v3
