@@ -47,12 +47,12 @@ jobs:
           yes "" | sudo ./install.sh
 
       - name: Build PDF
-        run: npx docusaurus-prince-pdf -u https://y-daiki-nakamura.github.io/docs/
+        run: npx docusaurus-prince-pdf -u https://y-daiki-nakamura.github.io/docs/  --output docs.pdf
 
       - name: Upload results
         uses: actions/upload-artifact@v3
         with:
           name: result
           # The output filename can be specified with --output option
-          path: pdf/y-daiki-nakamura.github.io-docs.pdf
+          path: pdf/docs.pdf
           if-no-files-found: error
