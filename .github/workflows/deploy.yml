@@ -48,7 +48,7 @@ jobs:
           chmod 600 ~/deploy_key.pem
           git config --global user.email "Daiki.Nakamura@yokogawa.com"
           git config --global user.name "Daiki.Nakamura"
-          cd public
+          cd build
           git config remote.origin.url "git@yghe.amzn.ykgw.net:derms/yghe-docusaurus-test.git"
           git checkout master
           
