@@ -60,7 +60,7 @@ jobs:
           git add -A
           if ! git diff --cached --quiet; then
             git commit -m "Deploy $GITHUB_SHA by GitHub Actions"
-            git pull origin main
+            git pull origin gh-pages
             git push origin main
           fi
          
