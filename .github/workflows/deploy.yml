@@ -50,7 +50,7 @@ jobs:
           git config --global user.name "Daiki.Nakamura"
           cd build
           git config remote.origin.url "git@yghe.amzn.ykgw.net:derms/yghe-docusaurus-test.git"
-          git checkout master
+          git checkout main
           
       - name: Deploy pages
         env:
