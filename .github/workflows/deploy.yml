@@ -55,11 +55,7 @@ jobs:
         env:
           GIT_SSH_COMMAND: ssh -i ~/deploy_key.pem -o StrictHostKeyChecking=no -F /dev/null
         run: |
-          git add -A
-          if ! git diff --cached --quiet; then
-            git commit -m "Deploy $GITHUB_SHA by GitHub Actions"
-            git push origin main
-          fi
+          git push origin gh-pages
 #       - name: Install Prince
 #         run: |
 #           curl https://www.princexml.com/download/prince-14.2-linux-generic-x86_64.tar.gz -O
