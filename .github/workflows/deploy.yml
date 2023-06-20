@@ -55,7 +55,7 @@ jobs:
         env:
           GIT_SSH_COMMAND: ssh -i ~/deploy_key.pem -o StrictHostKeyChecking=no -F /dev/null
         run: |
-          git push origin gh-pages
+          git push origin HEAD:gh-pages
 #       - name: Install Prince
 #         run: |
 #           curl https://www.princexml.com/download/prince-14.2-linux-generic-x86_64.tar.gz -O
