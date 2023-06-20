@@ -56,26 +56,23 @@ jobs:
           GIT_SSH_COMMAND: ssh -i ~/deploy_key.pem -o StrictHostKeyChecking=no -F /dev/null
         run: |
           git add -A
-          if ! git diff --cached --quiet; then
-            git commit -m "Deploy $GITHUB_SHA by GitHub Actions"
-            git pull origin main
-            git push origin main
-          fi
+          git commit -m "Deploy $GITHUB_SHA by GitHub Actions"
+          git push origin gh-pages
          
-      - name: Install Prince
-        run: |
-          curl https://www.princexml.com/download/prince-14.2-linux-generic-x86_64.tar.gz -O
-          tar zxf prince-14.2-linux-generic-x86_64.tar.gz
-          cd prince-14.2-linux-generic-x86_64
-          yes "" | sudo ./install.sh
+#       - name: Install Prince
+#         run: |
+#           curl https://www.princexml.com/download/prince-14.2-linux-generic-x86_64.tar.gz -O
+#           tar zxf prince-14.2-linux-generic-x86_64.tar.gz
+#           cd prince-14.2-linux-generic-x86_64
+#           yes "" | sudo ./install.sh
 
-      - name: Build PDF
-        run: npx docusaurus-prince-pdf -u https://y-daiki-nakamura.github.io/docusaurus-test/docs/intro --output ./pdf/docs.pdf
+#       - name: Build PDF
+#         run: npx docusaurus-prince-pdf -u https://y-daiki-nakamura.github.io/docusaurus-test/docs/intro --output ./pdf/docs.pdf
 
-      - name: Upload results
-        uses: actions/upload-artifact@v3
-        with:
-          name: result
-          # The output filename can be specified with --output option
-          path: pdf/docs.pdf
-          if-no-files-found: error
+#       - name: Upload results
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: result
+#           # The output filename can be specified with --output option
+#           path: pdf/docs.pdf
+#           if-no-files-found: error
