@@ -54,5 +54,5 @@ jobs:
         with:
           name: result
           # The output filename can be specified with --output option
-          path: pdf/docusaurus.io-docs.pdf
+          path: pdf/y-daiki-nakamura.github.io-docs.pdf
           if-no-files-found: error
